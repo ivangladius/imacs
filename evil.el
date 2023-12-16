@@ -119,4 +119,5 @@
   :after evil-mode
   :ensure t
   :config
+  (setq evil-want-keybinding nil)
   (evil-collection-init))
