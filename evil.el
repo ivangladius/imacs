@@ -11,7 +11,17 @@
   (evil-scroll-down 0)
   (call-interactively 'evil-scroll-line-to-center))
 
+
+(setq evil-want-keybinding nil)
+
+(use-package evil-collection
+  :ensure t
+  :config
+  (evil-collection-init))
+
+
 (use-package evil
+  :after evil-collection
   :ensure t
   :demand t
   :init
@@ -114,10 +124,3 @@
 	      (define-key evil-motion-state-local-map (kbd "<SPC>") space-map)))
 
   (evil-mode))
-
-(use-package evil-collection
-  :after evil-mode
-  :ensure t
-  :config
-  (setq evil-want-keybinding nil)
-  (evil-collection-init))
