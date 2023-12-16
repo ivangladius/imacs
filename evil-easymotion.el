@@ -1,4 +1,5 @@
 
 
-(use-package evil-easymotion
-  :ensure t)
+;; (use-package evil-easymotion
+;;   :ensure t)
+

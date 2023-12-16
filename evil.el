@@ -123,4 +123,8 @@
 	      (define-key evil-normal-state-local-map (kbd "<SPC>") space-map)
 	      (define-key evil-motion-state-local-map (kbd "<SPC>") space-map)))
 
+
+  (define-key evil-normal-state-map (kbd "s") #'evil-avy-goto-char)
+  (define-key evil-normal-state-map (kbd "S") #'avy-pop-mark)
+
   (evil-mode))
