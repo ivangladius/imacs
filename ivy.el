@@ -8,7 +8,13 @@
 	ivy-height 25)
   (define-key space-i-map (kbd "e") #'counsel-find-file)
   (define-key space-i-map (kbd "r") #'counsel-recentf)
-  (define-key space-i-map (kbd "f") #'counsel-switch-buffer)
+  (define-key space-i-map (kbd "f") #'persp-counsel-switch-buffer)
+  (define-key space-i-map (kbd "F") #'counsel-switch-buffer)
+  (define-key space-i-map (kbd "E") #'(lambda () (interactive)
+					(let ((default-directory "~/"))
+					  (counsel-find-file nil default-directory))))
+					
+
   (define-key space-map (kbd "]") #'counsel-yank-pop)
   (global-set-key (kbd "M-s") #'imenu)
   (global-set-key (kbd "M-a") #'counsel-ag)

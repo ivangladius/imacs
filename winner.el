@@ -3,7 +3,7 @@
   :ensure t 
   :demand t
   :config
-  (define-key evil-normal-state-map (kbd "3") #'winner-undo)
-  (define-key evil-normal-state-map (kbd "4") #'winner-redo)
+  (define-key space-map (kbd "9") #'winner-undo)
+  (define-key space-map (kbd "8") #'winner-redo)
   :config
   (winner-mode))

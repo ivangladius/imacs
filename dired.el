@@ -3,6 +3,9 @@
 
 ;; preview files and directories in other window live like ranger
 
+;; copy file from one dired split to the other split
+(setq dired-dwim-target t)
+
 ;;(setq my/dired-live-preview-buffer-name nil)
 (setq my/dired-live-preview-active nil)
 (setq my/dired-live-preview-buffer-list '())

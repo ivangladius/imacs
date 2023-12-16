@@ -10,7 +10,7 @@
   (define-key space-w-map (kbd "i") #'persp-switch)
   (define-key space-w-map (kbd "d") #'persp-kill-current)
   (require 'perspective)
-  (setq persp-show-modestring nil)
+  ;(setq persp-show-modestring nil)
   (setq persp-suppress-no-prefix-key-warning t)
   
   (defun persp-kill-current ()

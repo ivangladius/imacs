@@ -50,12 +50,19 @@
   (define-key space-map "w" space-w-map)
 
 ;; #####################################
+
+  (define-prefix-command 'space-/-map)
+  (define-key space-map "/" space-/-map)
+
+;; #####################################
   (define-prefix-command 'space-l-map)
   (define-key space-map "l" space-l-map)
 
   (define-key space-l-map "e" #'(lambda () (interactive) (eshell t)))
   (define-key space-l-map "v" #'vterm)
   (define-key space-l-map "s" #'magit-status)
+
+  
 
   (define-key space-map "k" #'kill-current-buffer)
   (define-key space-map "j" #'dired-jump)
@@ -81,22 +88,32 @@
   (define-key evil-insert-state-map (kbd "M-k") #'evil-window-up)
   (define-key evil-insert-state-map (kbd "M-l") #'evil-window-right)
 
+  (global-set-key (kbd "M-q") #'save-buffers-kill-terminal)
+  
   ;; (global-key-set (kbd ".") #'scroll-down)
 
   (add-hook 'dired-mode-hook
 	    (lambda ()
 	      (define-key evil-normal-state-local-map (kbd "<SPC>") space-map)
 	      (define-key evil-motion-state-local-map (kbd "<SPC>") space-map)))
+	      ;; (define-key evil-normal-state-local-map (kbd "<SPC>") evil-normal-state-map)))
 
   (add-hook 'magit-status-mode-hook
 	    (lambda ()
 	      (define-key evil-normal-state-local-map (kbd "<SPC>") space-map)
 	      (define-key evil-motion-state-local-map (kbd "<SPC>") space-map)))
 
+  (add-hook 'help-mode-hook
+	    (lambda ()
+	      (define-key evil-normal-state-local-map (kbd "<SPC>") space-map)
+	      (define-key evil-motion-state-local-map (kbd "<SPC>") space-map)))
 
+  (add-hook 'ielm-mode-hook
+	    (lambda ()
+	      (define-key evil-normal-state-local-map (kbd "<SPC>") space-map)
+	      (define-key evil-motion-state-local-map (kbd "<SPC>") space-map)))
 
   (evil-mode))
-
 
 (use-package evil-collection
   :after evil-mode
