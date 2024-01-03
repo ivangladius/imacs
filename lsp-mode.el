@@ -11,7 +11,7 @@
   (define-key evil-normal-state-map (kbd "gS") #'my-lsp-ivy-global-workspace-symbol-new-window)
   (setq gc-cons-threshold 100000000)
   (setq read-process-output-max (* 1024 1024))
-  (setq lsp-idle-delay 0.500)
+  (setq lsp-idle-delay 0.100)
   (setq lsp-log-io nil)
 
   (setq lsp-enable-symbol-highlighting t)

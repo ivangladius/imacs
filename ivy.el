@@ -16,11 +16,13 @@
 					
 
   (define-key space-map (kbd "]") #'counsel-yank-pop)
-  (global-set-key (kbd "M-s") #'imenu)
+  (global-set-key (kbd "M-s") #'counsel-imenu)
   (global-set-key (kbd "M-a") #'counsel-ag)
   (global-set-key (kbd "M-x") #'counsel-M-x)
   (global-set-key (kbd "M-p") #'swiper)
   :config
+  (ivy-configure 'counsel-imenu
+    :update-fn 'auto)
   (ivy-mode)
   (define-key ivy-minibuffer-map (kbd "<escape>") #'minibuffer-keyboard-quit)
   (define-key ivy-minibuffer-map (kbd "<tab>") #'ivy-alt-done))

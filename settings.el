@@ -28,7 +28,7 @@
 (use-package doom-themes
   :ensure t
   :config
-  (load-theme 'modus-vivendi t))
+  (load-theme 'doom-1337 t))
 
 
 ;;(global-display-line-numbers-mode 1)
@@ -36,7 +36,7 @@
 
 
 (set-face-attribute 'default nil
-                    :family "JetBrains Mono"
+                    :family "Hack"
                     :height 115
                     :weight 'normal
                     :width 'normal)
