@@ -8,6 +8,7 @@
   (interactive)
   (load-file "~/.emacs.d/init.el"))
    
+(hl-line-mode)
   
 
 (let ((path (shell-command-to-string ". ~/.bashrc; echo -n $PATH")))
@@ -36,7 +37,7 @@
 
 
 (set-face-attribute 'default nil
-                    :family "Hack"
+                    :family "JetBrains Mono"
                     :height 115
                     :weight 'normal
                     :width 'normal)
