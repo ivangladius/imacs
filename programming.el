@@ -3,4 +3,7 @@
 
 
 (use-package go-mode
-  :ensure t)
+  :ensure t
+  :config
+  ;; (evil-define-key 'normal 'go-mode "gD" #'(lambda() (message "hello world")))
+  )

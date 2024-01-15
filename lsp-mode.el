@@ -59,10 +59,11 @@
                          (require 'lsp-pyright))))
 
 
- (use-package lsp-java
-   :ensure t
-   :hook (java-mode . (lambda ()
-                        (require 'lsp-java))))
+ ;; (use-package lsp-java
+ ;;   :ensure t
+ ;;   :hook (java-mode . (lambda ()
+ ;;                        (require 'lsp-java))))
+
 
 (use-package ccls
   :ensure t
@@ -82,10 +83,14 @@
 (use-package smartparens
   :ensure t)
 
+;; DAP-MODE
+;;(add-to-list 'load-path "~/programs/dap-mode")
 (use-package dap-mode
-  :ensure t
+   :ensure t
   :config
-  (setq dap-auto-configure-mode t))
+  (setq dap-auto-configure-features '(sessions locals controls tooltip))
+   ;; (setq dap-auto-configure-mode t)
+   )
 
 
 ;; navigate to *xref* lsp references without leaving the window
