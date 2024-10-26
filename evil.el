@@ -45,6 +45,7 @@
 
   (define-key space-f-map "d" 'last-buffer)
 
+  ;; ####################################
 
   (define-prefix-command 'space-o-map)
   (define-key space-map "o" space-o-map)
@@ -59,7 +60,7 @@
   (define-prefix-command 'space-w-map)
   (define-key space-map "w" space-w-map)
 
-;; #####################################
+  ;; ###################################
 
   (define-prefix-command 'space-/-map)
   (define-key space-map "/" space-/-map)
@@ -67,6 +68,9 @@
 ;; #####################################
   (define-prefix-command 'space-l-map)
   (define-key space-map "l" space-l-map)
+
+;; #####################################
+  
 
   (define-key space-l-map "e" #'(lambda () (interactive) (eshell t)))
   (define-key space-l-map "v" #'vterm)

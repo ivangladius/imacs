@@ -8,7 +8,7 @@
   (interactive)
   (load-file "~/.emacs.d/init.el"))
    
-(global-hl-line-mode)
+;;(global-hl-line-mode)
   
 
 (let ((path (shell-command-to-string ". ~/.bashrc; echo -n $PATH")))
