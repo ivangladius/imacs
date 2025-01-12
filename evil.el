@@ -70,14 +70,22 @@
   (define-key space-map "l" space-l-map)
 
 ;; #####################################
+
+  (define-prefix-command 'space-e-map)
+  (define-key space-map "e" space-e-map)
+
+;; #####################################
+
+  ;; (define-key space-e-map (kbd "]") #'next-error)
+  ;; (define-key space-e-map (kbd "[") #'previous-error)
   
+  (define-key evil-visual-state-map (kbd "<SPC> c") #'comment-or-uncomment-region)
 
   (define-key space-l-map "e" #'(lambda () (interactive) (eshell t)))
   (define-key space-l-map "v" #'vterm)
   (define-key space-l-map "s" #'magit-status)
 
   
-
   (define-key space-map "k" #'kill-current-buffer)
   (define-key space-map "j" #'dired-jump)
   (define-key space-map "1" #'delete-other-windows)

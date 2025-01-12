@@ -4,6 +4,7 @@
 
 (shell-command "setxkbmap -option caps:escape && xset r rate 200 40")
 
+
 (defun load-init ()
   (interactive)
   (load-file "~/.emacs.d/init.el"))
@@ -38,7 +39,7 @@
 
 (set-face-attribute 'default nil
                     :family "JetBrains Mono"
-                    :height 115
+                    :height 180 
                     :weight 'normal
                     :width 'normal)
 
@@ -77,6 +78,7 @@
 (setq tab-width 4)
 
 (setq dired-listing-switches "-allht")
+(setq dired-deletion-confirmer #'y-or-n-p)
 
 
 ;; avy

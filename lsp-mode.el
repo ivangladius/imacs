@@ -3,6 +3,7 @@
 
 (use-package lsp-mode
   :ensure t
+  :hook ((rust-mode . lsp-deferred))
   :config
   (define-key evil-normal-state-map (kbd "gd") #'lsp-find-definition)
   (define-key evil-normal-state-map (kbd "gD") #'my-lsp-find-definition-new-window)
@@ -24,10 +25,17 @@
   (setq lsp-modeline-code-actions-enable nil)
   (setq lsp-ui-sideline-enable nil)
   (setq lsp-modeline-diagnostics-enable nil)
-  (setq lsp-signature-auto-activate nil))
+  (setq lsp-signature-auto-activate nil)
+  (setq lsp-diagnostics-provider :none)
+  :commands lsp)
 
 
 (require 'lsp-mode)
+
+(use-package rust-mode
+  :ensure t)
+
+
 
 (defun screen-full-p ()
   "if more then 2 windows are there return true"
@@ -92,9 +100,13 @@
    ;; (setq dap-auto-configure-mode t)
    )
 
+;; ;; Associate Rust mode with eglot
+;; (require 'eglot)
+;; (add-to-list 'eglot-server-programs '(rust-mode . ("rust-analyzer")))
 
-;; navigate to *xref* lsp references without leaving the window
-;; trough shortcuts
+;; (add-hook 'rust-mode-hook
+;;           (lambda ()
+;; 	    (call-interactively 'eglot)))
 
 (setq my/lsp-xref-buffer-open nil)
 (setq my/lsp-xref-buffer-name "*xref*")
